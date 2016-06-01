@@ -17,17 +17,19 @@ Continuing on in the Simon Stamp Saga... In this lesson we will learn how to org
 
 Watch the video below if you are unfamiliar with Git. We will be using Git to access course materials and to share and collaborate on project code throughout this course. After watching the video you may use the text below to review all of the topics discussed in the video.
 
+**Note** that the video uses your computer's terminal, but in this course, you'll be using the Learn IDE and all Git commands will work the same way on it as it does on your terminal.
+
 <iframe width="640" height="480" src="https://www.youtube.com/embed/4sTHVD7rAQA?rel=0" frameborder="0" allowfullscreen></iframe>
 
 ### What Are Branches?
 
-Branches are like alternate timelines that we can save our commits to. If you visualize our current branch "master" as the trunk of a tree and all of our commits so far on master are like timestamps along the trunk. If we climb up or down the tree trunk we can fast forward or rewind our code to a particular commit. Now lets say we wanted to build out a new feature in our code, we aren't sure if we will keep the changes or not, so for the sake of flexibility we will create a new branch growing off the trunk of the tree and add commits for our new code feature on that new branch. This way if it turns out that we do not like our code for this feature we can simply cut (delete) that branch off the tree, or if we do like this new feature we can simply merge (combine) that branch back into our trunk (master). 
+Branches are like alternate timelines that we can save our commits to. If you visualize our current branch "master" as the trunk of a tree and all of our commits so far on master are like timestamps along the trunk. If we climb up or down the tree trunk we can fast forward or rewind our code to a particular commit. Now let's say we wanted to build out a new feature in our code, we aren't sure if we will keep the changes or not, so for the sake of flexibility we will create a new branch growing off the trunk of the tree and add commits for our new code feature on that new branch. This way if it turns out that we do not like our code for this feature we can simply cut (delete) that branch off the tree, or if we do like this new feature we can simply merge (combine) that branch back into our trunk (master). 
 
-<!-- The master branch for all intents and purposes is usually left pristine, it is typically the code  we consider to be complete, whole, in a finished state that we would be proud to show the public. If we want to experiement or try out adding a new feature to our code we would typically do that on a different branch. -->
+<!-- The master branch for all intents and purposes is usually left pristine, it is typically the code  we consider to be complete, whole, in a finished state that we would be proud to show the public. If we want to experiment or try out adding a new feature to our code we would typically do that on a different branch. -->
 
 ### Listing Branches
 
-In practice it is nice to display a list of all current branches that exist within a repository. In Terminal at our simon-stamp-collection repo, we can type the command `git branch` to display all branches. This returns
+In practice it is nice to display a list of all current branches that exist within a repository. In the Learn IDE, cd in to the simon-stamp-collection repo. Now we can type the command `git branch` to display all branches. This returns
 
 ```shell
 * master
@@ -37,7 +39,7 @@ Currently since we only have one branch "master" that is all that is listed. The
 
 ### Create Branches
 
-Let's say we want to create a blog page for our Simon's Stamp Collection project, but we are not sure if we will keep it or not. Whenever we want to build a new feature and have the flexibility to keep it or dispose of it, branches come in handy. Let's create a new feature branch and call it "blog-pages". To do so, type `git checkout -b blog-page` and press return. You might also see people using a shortcut alias fro "checkout" by simply styping "co" instead (the way I do in the video). The "-b" flag states that we are checking out a new branch. This command both creates a new branch and also changes to that branch. the final argument "blog-page" is the name of our branch. It is a convention to use `-` hyphens in branch names, and never to use spaces which withh break the command. Now our terminal prompt shows our branch as (blog-page) where it previous had shown (master).
+Let's say we want to create a blog page for our Simon's Stamp Collection project, but we are not sure if we will keep it or not. Whenever we want to build a new feature and have the flexibility to keep it or dispose of it, branches come in handy. Let's create a new feature branch and call it "blog-pages". To do so, type `git checkout -b blog-page` and press return. You might also see people using a shortcut alias fro "checkout" by simply styping "co" instead (the way we do in the video). The "-b" flag states that we are checking out a new branch. This command both creates a new branch and also changes to that branch. the final argument "blog-page" is the name of our branch. It is a convention to use `-` hyphens in branch names, and never to use spaces which will break the command. Now our terminal prompt shows our branch as (blog-page) where it previous had shown (master).
 
 Now let's type that `git branch` command in again and press return. This displays:
 
@@ -46,7 +48,7 @@ Now let's type that `git branch` command in again and press return. This display
   master
 ```
 
-This indicates that we now have 2 branches "master" and "blog-page". Again, the `*` asterisk symbol indicates we are currently working on the "blog-page" branch. Currently, any commits we make will be written on the "blog-page" branch.
+This indicates that we now have two branches, "master" and "blog-page". Again the `*` asterisk symbol indicates we are currently working on the "blog-page" branch. Currently, any commits we make will be written on the "blog-page" branch.
 
 Next, let's create a new file. In Terminal type: `touch blog.html` and press return. Then in your code editor open up the blog.html file and paste in the following text:
 
@@ -54,7 +56,7 @@ Next, let's create a new file. In Terminal type: `touch blog.html` and press ret
 Simon's Blog Page
 ```
 
-Then save the file and head back to Terminal. Type `git add blog.html` and press return, Then type `git commit -m "add blog page"` and press return. Next let's backup this branches work by pugsing it to our remote. Type `git push -u origin blog-page` and press return. This reports:
+Then save the file and head back to Terminal. Type `git add blog.html` and press return, Then type `git commit -m "add blog page"` and press return. Next let's backup this branch's work by pushing it to our remote. Type `git push -u origin blog-page` and press return. This reports:
 
 ```shell
 Counting objects: 4, done.
@@ -73,7 +75,7 @@ Next, let's go back to the browser and visit our simon-stamp-collection repo on 
 
 ### Merging Branches
 
-Let's pretend that we have finished up work on our blog page, all the time commiting to our blog-page branch. We have shown the work to Simon and he approves. So we would liek to merge our commits from blog-page into our master branch. Back in Terminal we want to first checkout our master branch. Type `git checkout master` and press return. Now we can merge in the changes on our blog-page feature branch by typing `git merge blog-page` and pressing return. This should return something like:
+Let's pretend that we have finished up work on our blog page, all the time commiting to our blog-page branch. We have shown the work to Simon and he approves. So we would like to merge our commits from blog-page into our master branch. Back in Terminal we want to first checkout our master branch. Type `git checkout master` and press return. Now we can merge in the changes on our blog-page feature branch by typing `git merge blog-page` and pressing return. This should return something like:
 
 ```shell
 Updating b41165e..9e719e0
@@ -89,13 +91,13 @@ Now heading back to Github.com in the simon-stamp-collection repo we can see our
 
 ### Deleting Branches
 
-Let's assume we were aksed to create a contact page in our Simon's Stamp Collection project. We will start by working on a new feature branch. Type `git checkout -b contact-page` and press return. Then we will make a new file, type `touch contact.html` and press return. Then open the contact.html page in your code editor and paste in the followng text:
+Let's assume we were asked to create a contact page in our Simon's Stamp Collection project. We will start by working on a new feature branch. Type `git checkout -b contact-page` and press return. Then we will make a new file, type `touch contact.html` and press return. Then open the contact.html page in the text editor are of your IDE and paste in the followng text:
 
 ```txt
 Contact information for Simon.
 ```
 
-Save this file and jump back to Temrinal. Let's stage and commit our changes, type `git add contact.html` and press return, and type `git commit -m "add contact page"` and press return. Then we will push this branch up to our remote. Type `git push -u origin contact-page` and press return.
+Save this file and jump back to Terminal. Let's stage and commit our changes, type `git add contact.html` and press return, and type `git commit -m "add contact page"` and press return. Then we will push this branch up to our remote. Type `git push -u origin contact-page` and press return.
 
 Let's pretend we finished the contact page and showed it to Simon. Unfortunately Simon doesn't like the page he has decided to get rid of it. This is especially easy because we did all of our commits related to working on the contact page on the contact-page branch. This time instead of merging our branch into master we will instead simply delete the contact page branch.
 
@@ -114,7 +116,7 @@ Here Git is letting us know it removed our branch but that it is still existing 
 * master
 ```
 
-So locally only the blog-page and master branch exist now and in fact, contact-page has been removed.It does however still exist on our remote origin. In order to also remove the branch from origin type `git push origiin :contact-page` and press return. This should respond with the following:
+So locally only the blog-page and master branch exist now and in fact, contact-page has been removed. It does however still exist on our remote origin. In order to also remove the branch from origin type `git push origiin :contact-page` and press return. This should respond with the following:
 
 ```shell
 To git@github.com:jongrover/simon-stamp-collection.git
