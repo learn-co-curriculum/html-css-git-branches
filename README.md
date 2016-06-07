@@ -4,14 +4,14 @@
 
 Continuing on in the Simon Stamp Saga... In this lesson we will learn how to organize sprints of code on different feature branches. This will cover listing, creating, switching, merging, and deleting branches.
 
+Again, this lesson continues from the prior one and will build on the files and folders  that you've already created. Make sure you do all the lessons in this unit in order!
+
 ## Objectives
 
-1. What are Branches?
-2. List Branches
-3. Create Branches
-4. Change Branches
-5. Merge Branches
-6. Remove Branches
+1. Explain what branches are and why they're important
+2. List, create, and change branches
+3. Merge and remove branches
+4. Remove branches
 
 ## Getting to Know Branches
 
@@ -19,11 +19,13 @@ Watch the video below if you are unfamiliar with Git. We will be using Git to ac
 
 **Note** that the video uses your computer's terminal, but in this course, you'll be using the Learn IDE and all Git commands will work the same way on it as it does on your terminal.
 
+In addition you will see commands in the video that begin with - `git co ...`. This command will not work in the IDE and so instead please use `git checkout ...`. 
+
 <iframe width="640" height="480" src="https://www.youtube.com/embed/4sTHVD7rAQA?rel=0" frameborder="0" allowfullscreen></iframe>
 
 ### What Are Branches?
 
-Branches are like alternate timelines that we can save our commits to. If you visualize our current branch "master" as the trunk of a tree and all of our commits so far on master are like timestamps along the trunk. If we climb up or down the tree trunk we can fast forward or rewind our code to a particular commit. Now let's say we wanted to build out a new feature in our code, we aren't sure if we will keep the changes or not, so for the sake of flexibility we will create a new branch growing off the trunk of the tree and add commits for our new code feature on that new branch. This way if it turns out that we do not like our code for this feature we can simply cut (delete) that branch off the tree, or if we do like this new feature we can simply merge (combine) that branch back into our trunk (master). 
+Branches are like alternate timelines that we can save our commits to. If you visualize our current branch "master" as the trunk of a tree and all of our commits so far on master are like timestamps along the trunk. If we climb up or down the tree trunk we can fast forward or rewind our code to a particular commit. Now let's say we wanted to build out a new feature in our code. We aren't sure if we will keep the changes or not, so for the sake of flexibility we will create a new branch growing off the trunk of the tree and add commits for our new code feature on that new branch. This way if it turns out that we do not like our code for this feature we can simply cut (delete) that branch off the tree, or if we do like this new feature we can simply merge (combine) that branch back into our trunk (master). 
 
 <!-- The master branch for all intents and purposes is usually left pristine, it is typically the code  we consider to be complete, whole, in a finished state that we would be proud to show the public. If we want to experiment or try out adding a new feature to our code we would typically do that on a different branch. -->
 
