@@ -71,13 +71,13 @@ To git@github.com:jongrover/simon-stamp-collection.git
 Branch blog-page set uo to track remote branch blog-page from origin.
 ```
 
-Here we see that the remote recieved our new branch and is tracking changes between our local and remote branch with the same name.
+Here we see that the remote received our new branch and is tracking changes between our local and remote branch with the same name.
 
 Next, let's go back to the browser and visit our simon-stamp-collection repo on Github. Ohhh, looks like if we click on the centrally located drop menu button that says branches we can see our new remote branch "blog-page" is there.
 
 ### Merging Branches
 
-Let's pretend that we have finished up work on our blog page, all the time commiting to our blog-page branch. We have shown the work to Simon and he approves. So we would like to merge our commits from blog-page into our master branch. Back in Terminal we want to first checkout our master branch. Type `git checkout master` and press return. Now we can merge in the changes on our blog-page feature branch by typing `git merge blog-page` and pressing return. This should return something like:
+Let's pretend that we have finished up work on our blog page, all the time committing to our blog-page branch. We have shown the work to Simon and he approves. So we would like to merge our commits from blog-page into our master branch. Back in Terminal we want to first checkout our master branch. Type `git checkout master` and press return. Now we can merge in the changes on our blog-page feature branch by typing `git merge blog-page` and pressing return. This should return something like:
 
 ```shell
 Updating b41165e..9e719e0
@@ -118,7 +118,7 @@ Here Git is letting us know it removed our branch but that it is still existing 
 * master
 ```
 
-So locally only the blog-page and master branch exist now and in fact, contact-page has been removed. It does however still exist on our remote origin. In order to also remove the branch from origin type `git push origiin :contact-page` and press return. This should respond with the following:
+So locally only the blog-page and master branch exist now and in fact, contact-page has been removed. It does however still exist on our remote origin. In order to also remove the branch from origin type `git push origin :contact-page` and press return. This should respond with the following:
 
 ```shell
 To git@github.com:jongrover/simon-stamp-collection.git
